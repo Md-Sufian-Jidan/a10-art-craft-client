@@ -8,6 +8,7 @@ import { AuthContext } from "../../Contexts/AuthProvider";
 const Navbar = () => {
     // Basic usage
     const { user, logOut } = useContext(AuthContext);
+    console.log(user);
 
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
@@ -22,11 +23,11 @@ const Navbar = () => {
     const handleLogOut = () => {
         logOut()
             .then(() => {
-                toast.success('User Log Out Successfully');
+                return toast.success('User Log Out Successfully');
                 // console.log(result.user);
             })
             .catch(() => {
-                toast.error('oops! Something wrong. please reload the page');
+                return toast.error('oops! Something wrong. please reload the page');
                 // console.log(error.message);
             })
     }

@@ -33,7 +33,7 @@ const AuthProvider = ({ children }) => {
          setIsLoading(true);
          return signOut(auth)
      }
-    const userInfo = { user, isLoading, createUser, googleLogin, githubLogin, signInUser, logOut }
+    const userInfo = { user,setUser, isLoading, createUser, googleLogin, githubLogin, signInUser, logOut }
 
     return (
         <AuthContext.Provider value={userInfo}>

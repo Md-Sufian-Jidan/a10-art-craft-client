@@ -1,7 +1,8 @@
-import Swiper from 'swiper';
-import { Autoplay, Navigation } from 'swiper/modules';
-import { SwiperSlide } from 'swiper/react';
+import { SwiperSlide, Swiper } from 'swiper/react';
+import "swiper/css";
+import "swiper/css/bundle";
 
+import { Autoplay, Navigation } from 'swiper/modules';
 const BannerSlider = () => {
     return (
         <div>
@@ -9,9 +10,9 @@ const BannerSlider = () => {
                 // slidesPerView={2}
                 centeredSlides={true}
                 spaceBetween={30}
-                autoplay={{
-                    delay: 2000
-                }}
+                // autoplay={{
+                //     delay: 2000
+                // }}
                 pagination={{
                   type: 'fraction',
                 }}
@@ -19,27 +20,27 @@ const BannerSlider = () => {
                 modules={[Autoplay, Navigation]}
                 loop={true}>
                 <SwiperSlide>
-                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://i.ibb.co/tQsXMWh/view-from-balcony-apartment.jpg')]">
+                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://ibb.co/N23gVM4')]">
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://i.ibb.co/T0JkV20/istockphoto-1448385933-1024x1024.jpg')]">
+                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://ibb.co/ZVxtLFw')]">
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://i.ibb.co/XWg8SsB/rural-house-surroundings-daylight.jpg')]">
+                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://ibb.co/s1kX0F2')]">
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://i.ibb.co/s59LhkM/modern-luxury-domestic-room-comfortable-relaxation-generative-ai.jpg')]">
+                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://ibb.co/mtTd0Qh')]">
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://i.ibb.co/jbg53CY/cafe-living-room-loft-style.jpg')]">
+                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://ibb.co/MDc40Kj')]">
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://i.ibb.co/4NGdbNH/beautiful-umbrella-chair-around-swimming-pool-hotel-resort.jpg')]">
+                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://ibb.co/CM3S5Bs')]">
                     </div>
                 </SwiperSlide>
             </Swiper>

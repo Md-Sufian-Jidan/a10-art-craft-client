@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div>
-      {/* <BannerSlider /> */}
+      <BannerSlider />
       <h1>Vite + React</h1>
     </div>
   )

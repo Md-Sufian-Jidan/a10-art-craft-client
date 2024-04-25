@@ -8,7 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 const Register = () => {
     // show password
     const [show, setShow] = useState(false);
-    const { createUser } = useContext(AuthContext);
+    const { createUser, setUser } = useContext(AuthContext);
     const handleRegister = (e) => {
         e.preventDefault();
         // console.log('register ');
@@ -18,11 +18,23 @@ const Register = () => {
         const photo = form.photo.value;
         const password = form.password.value;
         const user = { name, email, photo, password };
-        console.log(user);
-        createUser()
+        // console.log(user);
+        if(password.length < 6){
+            return toast.error('your password should at least 6 character long');
+         }
+         if(!/[A-Z]/.test(password)){
+             return toast.error('Your password should contain a Capital letter')
+         }
+         if(!/[a-z]/.test(password)){
+             return toast.error('Your password should contain a lower letter')
+         }
+        createUser(email, password)
             .then((result) => {
-                console.log(result);
-                return toast.success('User Created Successfully')
+                console.log(result.user);
+                if (result.user) {
+                    setUser(result.user);
+                    return toast.success('User Created Successfully')
+                }
             })
             .catch((error) => {
                 console.log(error);
