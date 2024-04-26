@@ -15,12 +15,14 @@ const AddProduct = () => {
     const subCategory = form.subCategory.value;
     const description = form.description.value;
     const price = form.price.value;
+    const processTime = form.processTime.value;
+    const stock = form.stock.value;
     const userName = form.userName.value;
     const userEmail = form.userEmail.value;
     const yes = form.yes.checked;
     const no = form.no.checked;
     const photo = form.photo.value;
-    const user ={name, subCategory, description, price,userName, userEmail, yes, no, photo};
+    const user ={name, subCategory, description, price,processTime,stock,userName, userEmail, yes, no, photo};
     console.log(user);
     fetch('http://localhost:3000/crafts', {
       method:'POST',
@@ -42,7 +44,7 @@ const AddProduct = () => {
         form.reset();
       }
     })
-  }
+  };
   return (
     <div className="bg-[#e1f1cb] lg:p-20 p-7 rounded">
       <h2 className="text-3xl text-center font-extrabold">Add a Craft</h2>
@@ -108,7 +110,7 @@ const AddProduct = () => {
             </label>
             <label className="input-group">
               <input type="text" placeholder="Process Time"
-                name="process" className="input input-bordered w-full" required />
+                name="processTime" className="input input-bordered w-full" required />
             </label>
           </div>
         </div>
@@ -119,8 +121,8 @@ const AddProduct = () => {
               <span className="label-text">Stock Status</span>
             </label>
             <label className="input-group">
-              <input type="text" placeholder="Process Time"
-                name="process" className="input input-bordered w-full" required />
+              <input type="text" placeholder="Stock Status"
+                name="stock" className="input input-bordered w-full" required />
             </label>
           </div>
           <div className="from-control md:w-1/2">

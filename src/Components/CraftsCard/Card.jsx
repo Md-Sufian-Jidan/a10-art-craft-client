@@ -29,7 +29,7 @@ const Card = ({ crafts }) => {
     );
 };
 Card.propTypes = {
-    children: PropTypes.object.isRequired,
-    crafts: PropTypes.object.isRequired
+    children: PropTypes.object,
+    crafts: PropTypes.object
 };
 export default Card;

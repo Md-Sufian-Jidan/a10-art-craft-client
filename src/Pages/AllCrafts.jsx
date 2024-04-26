@@ -1,10 +1,12 @@
+import { useState } from "react";
 import { FaEdit } from "react-icons/fa";
 import { FaDeleteLeft } from "react-icons/fa6";
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Swal from "sweetalert2";
 
 const AllCrafts = () => {
     const loadedCrafts = useLoaderData();
+    const [crafts , setCrafts] = useState(loadedCrafts);
     const handleEdit = () => {
         console.log('edit btn clicked');
     };
@@ -19,7 +21,7 @@ const AllCrafts = () => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch('', {
+                fetch(`http://localhost:3000/crafts/${id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())
@@ -31,6 +33,8 @@ const AllCrafts = () => {
                             text: "Your Added craft is deleted.",
                             icon: "success"
                           });
+                          const remaining = crafts.filter((craft) => craft._id !== id);
+                          setCrafts(remaining);
                     }
                 })
             }
@@ -50,20 +54,23 @@ const AllCrafts = () => {
                             <th>Price</th>
                             <th>Rating</th>
                             <th>Update/Delete</th>
+                            <th>Read More</th>
                         </tr>
                     </thead>
                     <tbody>
                         {/* row 1 */}
                         {
-                            loadedCrafts.map((crafts, idx) => {
+                            crafts.map((crafts, idx) => {
                                 return (
-                                    <tr key={crafts._id} className="bg-indigo-300 ">
+                                    <tr key={crafts._id} className="bg-blue-300 ">
                                         <th>{idx + 1}</th>
                                         <td>{crafts.userName}</td>
                                         <td>{crafts.price}</td>
                                         <td>{crafts.rating}</td>
-                                        <td className="flex items-center justify-center gap-3"><FaEdit className="hover:text-[#F5DAD2] hover:scale-110" onClick={handleEdit} size={20} /><FaDeleteLeft className="hover:text-red-700 hover:scale-110" onClick={() =>handleDelete(crafts._id)} size={20} />
-</td>
+                                        <td className="flex items-center justify-center gap-3">
+                                            <Link to={`/update/${crafts._id}`}><FaEdit className="hover:text-[#F5DAD2] hover:scale-110" onClick={handleEdit} size={20} /></Link>
+                                        <FaDeleteLeft className="hover:text-red-700 hover:scale-110" onClick={() =>handleDelete(crafts._id)} size={20} /></td>
+                                        <td><Link className="btn bg-green-200" to={`/crafts/${crafts._id}`}>View Details</Link></td>
                                     </tr>
                                 )
                             })

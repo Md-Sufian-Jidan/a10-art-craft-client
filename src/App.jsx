@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import BannerSlider from './Components/Header/BannerSlider'
 import Card from './Components/CraftsCard/Card'
@@ -6,7 +5,6 @@ import { useLoaderData } from 'react-router-dom'
 import Banner from './Components/Header/Banner'
 
 function App() {
-  const [count, setCount] = useState(0)
   const loadedCrafts = useLoaderData();
   console.log(loadedCrafts);
 
@@ -20,7 +18,6 @@ function App() {
           loadedCrafts?.map((crafts) => <Card key={crafts._id} crafts={crafts}></Card>)
         }
       </div>
-
     </div>
   )
 }

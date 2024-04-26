@@ -9,6 +9,7 @@ import ProtectedRoute from "../Components/ProtectedRoute/ProtectedRoute";
 import AllCrafts from "../Pages/AllCrafts";
 import Card from "../Components/CraftsCard/Card";
 import CardDetails from "../Components/CraftsCard/CardDetails";
+import UpdateCraft from "../Components/Update/UpdateCraft";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
         },
         {
             path:'/allCrafts',
-            element: <AllCrafts />,
+            element: <ProtectedRoute><AllCrafts /></ProtectedRoute>,
             loader: () => fetch('http://localhost:3000/crafts')
         },
         {
@@ -43,7 +44,12 @@ const router = createBrowserRouter([
         },
         {
           path: '/crafts/:id',
-          element: <CardDetails />,
+          element: <ProtectedRoute><CardDetails /></ProtectedRoute>,
+          loader: ({params}) => fetch (`http://localhost:3000/crafts/${params.id}`)
+        },
+        {
+          path: '/update/:id',
+          element: <ProtectedRoute><UpdateCraft /></ProtectedRoute>,
           loader: ({params}) => fetch (`http://localhost:3000/crafts/${params.id}`)
         }
       ]
