@@ -51,7 +51,7 @@ const UpdateCraft = () => {
 
     return (
         <div className="bg-[#dfcccc] lg:p-20 p-7 rounded">
-            <h2 className="text-3xl text-center font-extrabold">Update Craft</h2>
+            <h2 className="text-3xl text-center font-extrabold">Update the Craft</h2>
             <form onSubmit={handleUpdate} className="md:w-1/2 mx-auto">
                 {/* from name and quantity row */}
                 <div className="md:flex gap-5 mb-5">
@@ -179,7 +179,7 @@ const UpdateCraft = () => {
                                 className="input input-bordered w-full" required />
                         </label>
                     </div>
-                    <input type="submit" value="Add Craft" className="btn btn-success w-full my-5" />
+                    <input type="submit" value="Update Craft" className="btn btn-success w-full my-5" />
                 </div>
             </form>
         </div>

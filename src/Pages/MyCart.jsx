@@ -1,8 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Contexts/AuthProvider";
-import { FaDollarSign } from "react-icons/fa";
+import { FaDollarSign, FaEdit } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MyCart = () => {
     const { user, isLoading } = useContext(AuthContext);
@@ -22,6 +23,14 @@ const MyCart = () => {
     if (isLoading) {
         return <span className="loading loading-bars loading-2xl flex justify-center items-center"></span>;
     }
+    const handleEdit = (id) => {
+        console.log('edit btn clicked');
+        fetch(`http://localhost:3000/crafts/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        });
+    };
     const handleDelete = (id) => {
         Swal.fire({
             title: "Are you sure?",
@@ -52,8 +61,7 @@ const MyCart = () => {
             }
         });
         console.log('delete', id);
-
-    }
+    };
     return (
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 my-10">
             {
@@ -72,8 +80,8 @@ const MyCart = () => {
                                 </div>
                                 <p className="text-xl font-semibold my-3">{item?.stock}</p>
                                 <div className="card-actions flex justify-between">
-                                    <button className="btn btn-success">Update</button>
-                                    <button onClick={() => handleDelete(item._id)}  className="btn btn-primary">Delete</button>
+                                    <Link onClick={() => handleEdit(item?._id)} className="btn btn-success" to={`/update/${item?._id}`}>Update</Link>
+                                    <button onClick={() => handleDelete(item?._id)} className="btn btn-primary">Delete</button>
                                 </div>
                             </div>
                         </div>
@@ -85,29 +93,3 @@ const MyCart = () => {
 };
 
 export default MyCart;
-// _id
-// 662b2dae9314864f47557b03
-// name
-// "Sunset Over the Mountains"
-// subCategory
-// "Landscape Painting"
-// description
-// "Capture the beauty of nature with this stunning landscape painting dep…"
-// price
-// "150"
-// userName
-// "Md jidan Jiyaj"
-// userEmail
-// "jidanjiyaj03@gmail.com"
-// yes
-// false
-// no
-// false
-// photo
-// "https://i.imgur.com/9yr2uTM.jpeg"
-// rating
-// "4.9"
-// stock
-// "In Stock"
-// processTime
-// "1 week"
