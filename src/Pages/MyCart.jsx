@@ -90,7 +90,7 @@ const MyCart = () => {
         <div>
             <div>
                 <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn m-1">Sort <FaArrowDownLong /></div>
+                    <div tabIndex={0} role="button" className="btn m-1 bg-green-300">Sort <FaArrowDownLong /></div>
                     <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                         <li><a onClick={() => handleSort(`${priceSort}`)}>Price</a></li>
                         <li><a onClick={() => handleSort(`${ratingSort}`)}>Rating</a></li>
@@ -112,7 +112,7 @@ const MyCart = () => {
                                         <p className="text-xl font-semibold flex items-center gap-2">Price: {item?.price}<FaDollarSign /></p>
                                         <p className="text-xl font-semibold flex items-center gap-2">Rating: {item?.rating} <FaStar className="text-gold-500" /></p>
                                     </div>
-                                    <p className="text-xl font-semibold my-3">{item?.stock}</p>
+                                    <p className="text-xl font-semibold my-3">Stock : {item?.stock}</p>
                                     <div className="card-actions flex justify-between">
                                         <Link onClick={() => handleEdit(item?._id)} className="btn btn-success" to={`/update/${item?._id}`}>Update</Link>
                                         <button onClick={() => handleDelete(item?._id)} className="btn btn-primary">Delete</button>

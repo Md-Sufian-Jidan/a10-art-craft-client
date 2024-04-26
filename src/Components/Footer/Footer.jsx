@@ -2,20 +2,20 @@
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-base-200 text-base-content">
+            <footer className="footer p-10 bg-gray-200 text-base-content">
   <nav>
     <h6 className="footer-title">Services</h6> 
-    <a className="link link-hover">Branding</a>
+    <a className="link link-hover">Painting</a>
     <a className="link link-hover">Design</a>
     <a className="link link-hover">Marketing</a>
-    <a className="link link-hover">Advertisement</a>
+    <a className="link link-hover">Make art</a>
   </nav> 
   <nav>
     <h6 className="footer-title">Company</h6> 
     <a className="link link-hover">About us</a>
     <a className="link link-hover">Contact</a>
-    <a className="link link-hover">Jobs</a>
-    <a className="link link-hover">Press kit</a>
+    <a className="link link-hover">For Learn</a>
+    <a className="link link-hover">For Review</a>
   </nav> 
   <nav>
     <h6 className="footer-title">Legal</h6> 
@@ -31,7 +31,7 @@ const Footer = () => {
       </label> 
       <div className="join">
         <input type="text" placeholder="username@site.com" className="input input-bordered join-item" /> 
-        <button className="btn btn-primary join-item">Subscribe</button>
+        <button className="btn bg-orange-300 join-item">Subscribe</button>
       </div>
     </fieldset>
   </form>
