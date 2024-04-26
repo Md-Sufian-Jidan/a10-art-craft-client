@@ -7,7 +7,10 @@ import { AuthContext } from "../../Contexts/AuthProvider";
 
 const Navbar = () => {
     // Basic usage
-    const { user, logOut } = useContext(AuthContext);
+    const { user,isLoading, logOut } = useContext(AuthContext);
+    if(isLoading) {
+        <div className="loading">Loading...</div>
+    }
     console.log(user);
 
     const navLinks = <>

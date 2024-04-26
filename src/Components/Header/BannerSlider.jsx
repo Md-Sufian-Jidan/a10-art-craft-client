@@ -20,27 +20,27 @@ const BannerSlider = () => {
                 modules={[Autoplay, Navigation]}
                 loop={true}>
                 <SwiperSlide>
-                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://ibb.co/N23gVM4')]">
+                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://i.imgur.com/0oaf5aH.jpeg')]">
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://ibb.co/ZVxtLFw')]">
+                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://i.imgur.com/Ps080li.jpeg')]">
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://ibb.co/s1kX0F2')]">
+                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://i.imgur.com/eoqrvLO.jpeg')]">
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://ibb.co/mtTd0Qh')]">
+                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://i.imgur.com/FFUs8R2.jpeg')]">
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://ibb.co/MDc40Kj')]">
+                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://i.imgur.com/NAvqMPI.jpeg')]">
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://ibb.co/CM3S5Bs')]">
+                    <div className="h-[60vh] w-full bg-cover bg-no-repeat bg-center bg-[url('https://i.imgur.com/QEkmEV2.jpeg')]">
                     </div>
                 </SwiperSlide>
             </Swiper>

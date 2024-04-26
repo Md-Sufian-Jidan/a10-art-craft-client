@@ -32,7 +32,7 @@ const Register = () => {
             .then((result) => {
                 console.log(result.user);
                 if (result.user) {
-                    setUser(result.user);
+                    setUser(result?.user);
                     return toast.success('User Created Successfully')
                 }
             })
