@@ -16,8 +16,7 @@ const Navbar = () => {
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/addCraft">Add Craft</NavLink></li>
-        <li><NavLink to="/allCrafts">All Art & craft Items</NavLink></li>
-        <li><NavLink to="/register">Register</NavLink></li>
+        <li><NavLink to="/allCrafts">All Craft</NavLink></li>
         {user &&
             <li><NavLink to="/about-us">About Us</NavLink></li>
         }
@@ -35,7 +34,8 @@ const Navbar = () => {
             })
     }
     return (
-        <div className="navbar bg-base-100">
+        <div className="z-30">
+            <div className="navbar bg-base-100 z-20">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -70,6 +70,7 @@ const Navbar = () => {
                 }
             </div>
             <ToastContainer />
+        </div>
         </div>
     );
 };

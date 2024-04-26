@@ -4,9 +4,11 @@ import Root from "../Layouts/Root";
 import AddProduct from "../Pages/AddProduct";
 import Register from '../Components/Register/Register'
 import Login from '../Components/Login/Login'
-import AllCrafts from "../Components/AllItems/AllCrafts";
 import Error from "../Components/Error/Error";
 import ProtectedRoute from "../Components/ProtectedRoute/ProtectedRoute";
+import AllCrafts from "../Pages/AllCrafts";
+import Card from "../Components/CraftsCard/Card";
+import CardDetails from "../Components/CraftsCard/CardDetails";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -15,7 +17,8 @@ const router = createBrowserRouter([
       children: [
         {
             path: '/',
-            element: <App />
+            element: <App />,
+          loader: () => fetch ('http://localhost:3000/crafts')
         },
         {
             path:'/addCraft',
@@ -23,7 +26,8 @@ const router = createBrowserRouter([
         },
         {
             path:'/allCrafts',
-            element: <AllCrafts />
+            element: <AllCrafts />,
+            loader: () => fetch('http://localhost:3000/crafts')
         },
         {
             path:'/register',
@@ -33,6 +37,15 @@ const router = createBrowserRouter([
             path:'/login',
             element: <Login />
         },
+        {
+          path:'/card',
+          element: <Card />,
+        },
+        {
+          path: '/crafts/:id',
+          element: <CardDetails />,
+          loader: ({params}) => fetch (`http://localhost:3000/crafts/${params.id}`)
+        }
       ]
     },
   ]);

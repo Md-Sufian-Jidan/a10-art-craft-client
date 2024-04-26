@@ -5,12 +5,12 @@ import { Navigate ,useLocation } from 'react-router-dom'
 import { AuthContext } from '../../Contexts/AuthProvider';
 
 const ProtectedRoute = ({children}) => {
-    const {user , load} = useContext(AuthContext);
+    const {user , isLoading} = useContext(AuthContext);
     let location = useLocation();
     console.log(location);
 
-    if(load){
-        return <span className="loading loading-bars loading-2xl flex justify-center items-center"></span>;
+    if(isLoading){
+        return <span className="loading loading-bars loading-lg flex justify-center items-center my-10"></span>;
     }
     if(user){
         return children;
