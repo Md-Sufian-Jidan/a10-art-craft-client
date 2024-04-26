@@ -46,7 +46,7 @@ const AddProduct = () => {
     })
   };
   return (
-    <div className="bg-[#e1f1cb] lg:p-20 p-7 rounded">
+    <div className="bg-[#e1f1cb] lg:p-20 p-7 rounded my-5">
       <h2 className="text-3xl text-center font-extrabold">Add a Craft</h2>
       <form onSubmit={handleAddCraft} className="md:w-1/2 mx-auto">
         {/* from name and quantity row */}

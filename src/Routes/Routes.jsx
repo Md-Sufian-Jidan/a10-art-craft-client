@@ -10,6 +10,7 @@ import AllCrafts from "../Pages/AllCrafts";
 import Card from "../Components/CraftsCard/Card";
 import CardDetails from "../Components/CraftsCard/CardDetails";
 import UpdateCraft from "../Components/Update/UpdateCraft";
+import MyCart from "../Pages/MyCart";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
             path:'/allCrafts',
             element: <ProtectedRoute><AllCrafts /></ProtectedRoute>,
             loader: () => fetch('http://localhost:3000/crafts')
+        },
+        {
+            path:'/myCrafts',
+            element: <ProtectedRoute><MyCart /></ProtectedRoute>,
+            // loader: () => fetch('http://localhost:3000/myCrat')
         },
         {
             path:'/register',

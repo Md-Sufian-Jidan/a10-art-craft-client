@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 const AllCrafts = () => {
     const loadedCrafts = useLoaderData();
-    const [crafts , setCrafts] = useState(loadedCrafts);
+    const [crafts, setCrafts] = useState(loadedCrafts);
     const handleEdit = () => {
         console.log('edit btn clicked');
     };
@@ -19,28 +19,28 @@ const AllCrafts = () => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
                 fetch(`http://localhost:3000/crafts/${id}`, {
                     method: 'DELETE'
                 })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    if (data.modifiedCount > 0) {
-                        Swal.fire({
-                            title: "Deleted!",
-                            text: "Your Added craft is deleted.",
-                            icon: "success"
-                          });
-                          const remaining = crafts.filter((craft) => craft._id !== id);
-                          setCrafts(remaining);
-                    }
-                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.modifiedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your Added craft is deleted.",
+                                icon: "success"
+                            });
+                            const remaining = crafts.filter((craft) => craft._id !== id);
+                            setCrafts(remaining);
+                        }
+                    })
             }
-          });
+        });
         console.log('delete', id);
-        
+
     }
     return (
         <div className='my-5'>
@@ -69,7 +69,7 @@ const AllCrafts = () => {
                                         <td>{crafts.rating}</td>
                                         <td className="flex items-center justify-center gap-3">
                                             <Link to={`/update/${crafts._id}`}><FaEdit className="hover:text-[#F5DAD2] hover:scale-110" onClick={handleEdit} size={20} /></Link>
-                                        <FaDeleteLeft className="hover:text-red-700 hover:scale-110" onClick={() =>handleDelete(crafts._id)} size={20} /></td>
+                                            <FaDeleteLeft className="hover:text-red-700 hover:scale-110" size={20} /></td>
                                         <td><Link className="btn bg-green-200" to={`/crafts/${crafts._id}`}>View Details</Link></td>
                                     </tr>
                                 )
