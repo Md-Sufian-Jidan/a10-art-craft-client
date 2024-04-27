@@ -3,7 +3,10 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { Fade } from "react-awesome-reveal";
 
 const Register = () => {
     // show password
@@ -19,15 +22,15 @@ const Register = () => {
         const password = form.password.value;
         const user = { name, email, photo, password };
         // console.log(user);
-        if(password.length < 6){
+        if (password.length < 6) {
             return toast.error('your password should at least 6 character long');
-         }
-         if(!/[A-Z]/.test(password)){
-             return toast.error('Your password should contain a Capital letter')
-         }
-         if(!/[a-z]/.test(password)){
-             return toast.error('Your password should contain a lower letter')
-         }
+        }
+        if (!/[A-Z]/.test(password)) {
+            return toast.error('Your password should contain a Capital letter')
+        }
+        if (!/[a-z]/.test(password)) {
+            return toast.error('Your password should contain a lower letter')
+        }
         createUser(email, password)
             .then((result) => {
                 console.log(result.user);
@@ -42,13 +45,15 @@ const Register = () => {
             })
     }
     return (
-        <div className="hero min-h-screen" data-aos="zoom-in" data-aos-duration="1000">
-            <div className="hero-content flex-col" data-aos="zoom-out" data-aos-delay="1500">
-                <div className="text-center lg:text-left" data-aos="fade-right" data-aos-delay="2000">
+        <div className="hero min-h-screen">
+            <div className="hero-content flex-col">
+                <div className="text-center lg:text-left">
+                    <Fade>
                     <h1 className="text-5xl font-bold">Register now!</h1>
+                    </Fade>
                 </div>
                 <div className="card shrink-0 max-w-sm shadow-2xl bg-[#BACD92]">
-                    <form onSubmit={handleRegister} className="card-body" data-aos="fade-down" data-aos-delay="2500">
+                    <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
