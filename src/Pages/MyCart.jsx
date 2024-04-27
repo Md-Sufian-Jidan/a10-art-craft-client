@@ -67,30 +67,31 @@ const MyCart = () => {
     };
     const price = displayCraft?.map((it) => it?.price)
     const ratingDes = displayCraft?.map((it) => it?.rating)
+    console.log(price, ratingDes);
     //-------descending data
-    const priceSort = price?.sort((a,b) => a - b);
-    const ratingSort = ratingDes?.sort((a,b) => a - b);
+    const priceSort = price?.sort((a, b) => a - b);
+    const ratingSort = ratingDes?.sort((a, b) => a - b);
 
     const handleSort = (filter) => {
         console.log('clicked');
-        if(filter == priceSort){
+        if (filter == priceSort) {
             const remaining = displayCraft?.filter((book) => console.log(book?.price) == console.log(filter));
-            const sort = remaining?.sort((rem1 , rem2) => rem1?.price - rem2?.price)
+            const sort = remaining?.sort((rem1, rem2) => rem1?.price - rem2?.price)
             console.log(sort);
             setDisplayCraft(sort)
         }
         else if (filter == ratingSort) {
             const remaining = displayCraft?.filter((book) => console.log(book.rating) == console.log(filter));
-            const sort = remaining?.sort((rem1 , rem2) => rem2.rating - rem1.rating)
+            const sort = remaining?.sort((rem1, rem2) => rem2.rating - rem1.rating)
             console.log(sort);
             setDisplayCraft(sort)
         }
     }
     return (
         <div>
-            <div>
+            <div className="w-1/2 mx-auto text-center">
                 <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn m-1 bg-green-300">Sort <FaArrowDownLong /></div>
+                    <div tabIndex={0} role="button" className="btn m-1 bg-green-300 ">Filter <FaArrowDownLong /></div>
                     <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                         <li><a onClick={() => handleSort(`${priceSort}`)}>Price</a></li>
                         <li><a onClick={() => handleSort(`${ratingSort}`)}>Rating</a></li>

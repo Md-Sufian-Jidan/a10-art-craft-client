@@ -1,7 +1,7 @@
 
 const Faq = () => {
     return (
-        <div className='flex flex-col-reverse lg:flex-row items-center gap-5 my-5'>
+        <div className='flex flex-col-reverse lg:flex-row items-center gap-5 lg:mx-1 mx-10 mb-5'>
             <div className="join join-vertical w-full ">
                 <div className="collapse collapse-arrow join-item border border-base-300">
                     <input type="radio" name="my-accordion-4" defaultChecked />

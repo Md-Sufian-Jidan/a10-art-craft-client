@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useContext } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider";
 import { FaStar } from 'react-icons/fa';
 
@@ -11,12 +11,11 @@ const Card = ({ crafts }) => {
     }
 
     return (
-        <div className='mx-auto'>
-            <div className="card bg-slate-200 shadow-xl">
+            <div className="card bg-slate-200 shadow-xl p-5 lg:mx-0 mx-10">
                 <figure>
-                    <img src={`${crafts?.photo}`} alt="painting" className="w-[300px] h-[300px]" />
+                    <img src={`${crafts?.photo}`} alt="painting" className="lg:w-[300px] w-full h-[300px]" />
                 </figure>
-                <div className="space-y-3 text-left my-3">
+                <div className="space-y-3 text-left my-3 mt-auto">
                     <h2><span className='text-xl font-bold mt-3'>Picture Name</span> : {crafts?.name}</h2>
                     <h2><span className='text-xl font-bold my-1'>Picture Category </span>: {crafts?.subCategory}</h2>
                     <p className='flex items-center gap-2'>
@@ -28,7 +27,6 @@ const Card = ({ crafts }) => {
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 Card.propTypes = {

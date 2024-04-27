@@ -18,6 +18,7 @@ const Navbar = () => {
         <li><NavLink to="/addCraft">Add Craft</NavLink></li>
         <li><NavLink to="/allCrafts">All Craft</NavLink></li>
         <li><NavLink to="/myCrafts">My Craft</NavLink></li>
+        <li><NavLink to="/artCrafts">Art & Craft</NavLink></li>
         <li><NavLink to="/register">Sign Up</NavLink></li>
         {/* {user &&
             <li><NavLink to="/about-us">About Us</NavLink></li>
@@ -36,7 +37,7 @@ const Navbar = () => {
             })
     }
     return (
-        <div className="z-30">
+        <div className="z-30 max-w-6xl mx-auto">
             <div className="navbar bg-base-100 z-20">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -47,7 +48,7 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Crafts House</a>
+                    <a className="text-xl">Crafts House</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

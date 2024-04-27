@@ -19,10 +19,9 @@ const AddProduct = () => {
     const stock = form.stock.value;
     const userName = form.userName.value;
     const userEmail = form.userEmail.value;
-    const yes = form.yes.checked;
-    const no = form.no.checked;
+    const customization = form.customization.value;
     const photo = form.photo.value;
-    const user ={name, subCategory, description, price,processTime,stock,userName, userEmail, yes, no, photo};
+    const user ={name, subCategory, description, price,processTime,stock,userName, userEmail, customization, photo};
     console.log(user);
     fetch('http://localhost:3000/crafts', {
       method:'POST',
@@ -128,16 +127,10 @@ const AddProduct = () => {
           <div className="from-control md:w-1/2">
             <label className="label">
               <span className="label-text">Customization</span>
-            <div className="flex gap-5">
-            <label className="flex items-center gap-2">
-              <span>Yes</span>
-              <input type="radio" name="yes" id="" />
             </label>
-            <label className="flex items-center gap-2">
-              <span>No</span>
-              <input type="radio" name="no" id="" />
-            </label>
-            </div>
+            <label className="input-group">
+              <input type="text" placeholder="Yes Or No"
+                name="customization" className="input input-bordered w-full" required />
             </label>
           </div>
         </div>
@@ -174,7 +167,7 @@ const AddProduct = () => {
                 className="input input-bordered w-full" required />
             </label>
           </div>
-          <input type="submit" value="Add Craft" className="btn btn-success w-full my-5" />
+          <input type="submit" value="Add Craft" className="btn bg-[#77B0AA] w-full my-5" />
         </div>
       </form>
     </div>

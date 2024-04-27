@@ -1,31 +1,28 @@
 import { useLoaderData } from "react-router-dom";
 
 const CardDetails = () => {
-    const loadedCraft = useLoaderData();
-    console.log(loadedCraft);
-    return (
-        <div className="my-10 rounded">
-           <div className="hero min-h-screen bg-indigo-200">
-  <div className="hero-content flex-col lg:flex-row">
-    <img src={`${loadedCraft.photo}`} className="max-w-sm rounded-lg shadow-2xl" />
-    <div>
-      <h1 className="text-xl font-semibold"><span className="lg:text-5xl text-2xl font-bold">Picture Name</span> : {loadedCraft.name}</h1>
-      <h1 className="text-xl font-semibold"><span className="lg:text-3xl text-2xl font-bold">Picture Category</span> : {loadedCraft.subCategory}</h1>
-
-      <p className="p-3 font-semibold"><span className="text-xl font-bold">Description</span> : {loadedCraft.description}</p>
-
-      <div className="flex justify-around items-center p-3">
-      <p className="text-start font-semibold"><span className="text-xl font-bold ">Price</span> : {loadedCraft.price} $</p>
-      <p className="text-start font-semibold"><span className="text-xl font-bold">Rating</span> : {loadedCraft?.rating} </p>
+  const loadedCraft = useLoaderData();
+  console.log(loadedCraft);
+  return (
+    <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-10 bg-[#d3dfb3] p-5 lg:p-10 my-10 rounded w-full">
+      <div>
+        <img className="lg:w-[500px] h-[400px]  w-full" src={loadedCraft?.photo} alt="" />
       </div>
-
-      <p className="font-semibold py-3"><span className="text-2xl font-bold">Author</span> : {loadedCraft.userName}</p>
-      {/* <button className="btn btn-primary">Get Started</button> */}
-    </div>
-  </div>
-</div>
+      <div className="lg:w-1/2">
+        <div className="text-xl font-semibold space-y-3">
+        <h1><span className="lg:text-4xl text-2xl font-bold">Picture Name</span> : {loadedCraft.name}</h1>
+        <h3><span className="lg:text-3xl text-2xl font-bold">Picture Category</span> : {loadedCraft.subCategory}</h3>
+        <p><span className="text-2xl font-bold">Description</span> : {loadedCraft.description}</p>
         </div>
-    );
+        <div className="flex justify-between items-center p-3">
+          <p className="text-start font-semibold"><span className="text-xl font-bold ">Price</span> : {loadedCraft.price} $</p>
+          <p className="text-start font-semibold"><span className="text-xl font-bold">Rating</span> : {loadedCraft?.rating} </p>
+          <p className="text-start font-semibold"><span className="text-xl font-bold">Customization</span> : {loadedCraft?.customization}</p>
+        </div>
+        <p className="font-semibold py-3 text-center"><span className="text-2xl font-bold">Author</span> : {loadedCraft.userName}</p>
+      </div>
+    </div>
+  );
 };
 
 export default CardDetails;
