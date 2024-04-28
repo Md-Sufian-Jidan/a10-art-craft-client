@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { FaStar } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider";
@@ -28,7 +28,7 @@ const CraftCategorySection = () => {
                                         <span className='flex items-center gap-1'><FaStar /> {craft?.rating}</span></p>
                                     <p><span className='text-xl font-bold my-1'>Picture Description</span> : {craft?.description}</p>
                                     <div className="card-actions justify-end">
-                                        <Link to={`/crafts/${craft._id}`} className="btn bg-[#ECCA9C]">View Details</Link>
+                                        <Link to={`/artCrafts/${craft._id}`} className="btn bg-[#72f1c1]">View Details</Link>
                                     </div>
                                 </div>
                             </div>

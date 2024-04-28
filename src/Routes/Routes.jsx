@@ -12,6 +12,7 @@ import CardDetails from "../Components/CraftsCard/CardDetails";
 import UpdateCraft from "../Components/Update/UpdateCraft";
 import MyCart from "../Pages/MyCart";
 import CraftCategorySection from "../Components/ArtAndCraftCategory/CraftCategorySection";
+import CraftDetails from "../Components/ArtAndCraftCategory/CraftDetails";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,11 @@ const router = createBrowserRouter([
         path: '/artCrafts',
         element: <CraftCategorySection />,
         loader: () => fetch(`http://localhost:3000/artCrafts`)
+      },
+      {
+        path: '/artCrafts/:id',
+        element: <CraftDetails />,
+        loader: ({params}) => fetch(`http://localhost:3000/artCrafts/${params.id}`)
       },
     ]
   },
