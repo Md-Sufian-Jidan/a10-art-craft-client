@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { FaStar } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider";
 // import { FaArrowDownLong } from "react-icons/fa6";
@@ -21,12 +20,13 @@ const CraftCategorySection = () => {
                                     <img src={`${craft?.photo}`} alt="painting" className="lg:w-[300px] w-full h-[300px]" />
                                 </figure>
                                 <div className="space-y-3 text-left my-3 mt-auto">
-                                    <h2><span className='text-xl font-bold mt-3'>Picture Name</span> : {craft?.name}</h2>
+                                    {/* <h2><span className='text-xl font-bold mt-3'>Picture Name</span> : {craft?.name}</h2> */}
                                     <h2><span className='text-xl font-bold my-1'>Subcategory Category </span>: {craft?.subCategory}</h2>
                                     <p className='flex items-center gap-2'>
-                                        <span className='text-xl font-bold my-1'>Rating</span> :
-                                        <span className='flex items-center gap-1'><FaStar /> {craft?.rating}</span></p>
-                                    <p><span className='text-xl font-bold my-1'>Picture Description</span> : {craft?.description}</p>
+                                        {/* <span className='text-xl font-bold my-1'>Rating</span> : */}
+                                        {/* <span className='flex items-center gap-1'><FaStar /> {craft?.rating}</span> */}
+                                        </p>
+                                    {/* <p><span className='text-xl font-bold my-1'>Picture Description</span> : {craft?.description}</p> */}
                                     <div className="card-actions justify-end">
                                         <Link to={`/artCrafts/${craft._id}`} className="btn bg-[#72f1c1]">View Details</Link>
                                     </div>

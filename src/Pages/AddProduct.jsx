@@ -23,7 +23,7 @@ const AddProduct = () => {
     const photo = form.photo.value;
     const user ={name, subCategory, description, price,processTime,stock,userName, userEmail, customization, photo};
     console.log(user);
-    fetch('http://localhost:3000/crafts', {
+    fetch('https://assignment-10-server-one-eta.vercel.app/crafts', {
       method:'POST',
       headers: {
         'content-type' : 'application/json'

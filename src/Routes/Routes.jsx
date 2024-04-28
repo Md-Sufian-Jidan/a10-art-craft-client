@@ -23,7 +23,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <App />,
-        loader: () => fetch('http://localhost:3000/crafts')
+        loader: () => fetch('https://assignment-10-server-one-orpin.vercel.app/crafts')
       },
       {
         path: '/addCraft',
@@ -32,12 +32,11 @@ const router = createBrowserRouter([
       {
         path: '/allCrafts',
         element: <ProtectedRoute><AllCrafts /></ProtectedRoute>,
-        loader: () => fetch('http://localhost:3000/crafts')
+        loader: () => fetch('https://assignment-10-server-one-orpin.vercel.app/crafts')
       },
       {
         path: '/myCrafts',
-        element: <ProtectedRoute><MyCart /></ProtectedRoute>,
-        // loader: () => fetch('http://localhost:3000/myCrat')
+        element: <ProtectedRoute><MyCart /></ProtectedRoute>
       },
       {
         path: '/register',
@@ -54,22 +53,22 @@ const router = createBrowserRouter([
       {
         path: '/crafts/:id',
         element: <ProtectedRoute><CardDetails /></ProtectedRoute>,
-        loader: ({ params }) => fetch(`http://localhost:3000/crafts/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-10-server-one-orpin.vercel.app/crafts/${params.id}`)
       },
       {
         path: '/update/:id',
         element: <ProtectedRoute><UpdateCraft /></ProtectedRoute>,
-        loader: ({ params }) => fetch(`http://localhost:3000/crafts/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-10-server-one-orpin.vercel.app/crafts/${params.id}`)
       },
       {
         path: '/artCrafts',
         element: <CraftCategorySection />,
-        loader: () => fetch(`http://localhost:3000/artCrafts`)
+        loader: () => fetch('https://assignment-10-server-one-orpin.vercel.app/artCrafts')
       },
       {
         path: '/artCrafts/:id',
         element: <CraftDetails />,
-        loader: ({params}) => fetch(`http://localhost:3000/artCrafts/${params.id}`)
+        loader: ({params}) => fetch(`https://assignment-10-server-one-orpin.vercel.app/artCrafts/${params.id}`)
       },
     ]
   },

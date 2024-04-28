@@ -11,7 +11,6 @@ const LearnArt = () => {
                        <Bounce>
                        <p className="mb-5 text-white">Dive into a realm of creativity and expression with our Learn Art section. Whether you are a novice seeking to hone your skills or a seasoned artist looking for inspiration, our curated collection of tutorials, tips, and resources has something for everyone. Unlock your artistic potential and embark on a journey of discovery with expert guidance and encouragement.</p>
                        </Bounce>
-                        {/* <button className="btn btn-primary">Get Started</button> */}
                     </div>
                 </div>
             </div>

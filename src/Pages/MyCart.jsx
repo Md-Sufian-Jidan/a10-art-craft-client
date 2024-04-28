@@ -10,11 +10,10 @@ const MyCart = () => {
     const { user, isLoading } = useContext(AuthContext);
     console.log(user.email);
     const [items, setItem] = useState([]);
-    // const [crafts, setCrafts] = useState();
     const [displayCraft, setDisplayCraft] = useState();
 
     useEffect(() => {
-        fetch(`http://localhost:3000/myCrafts/${user?.email}`)
+        fetch(`https://assignment-10-server-one-orpin.vercel.app/myCrafts/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -28,7 +27,7 @@ const MyCart = () => {
     }
     const handleEdit = (id) => {
         console.log('edit btn clicked');
-        fetch(`http://localhost:3000/crafts/${id}`)
+        fetch(`https://assignment-10-server-one-eta.vercel.app/crafts/${id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -45,7 +44,7 @@ const MyCart = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/crafts/${id}`, {
+                fetch(`https://assignment-10-server-one-eta.vercel.app/crafts/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -57,8 +56,8 @@ const MyCart = () => {
                                 text: "Your Added craft is deleted.",
                                 icon: "success"
                             });
-                            const remaining = crafts.filter((craft) => craft._id !== id);
-                            setCrafts(remaining);
+                            const remaining = items.filter((craft) => craft._id !== id);
+                            setDisplayCraft(remaining);
                         }
                     })
             }
@@ -67,7 +66,6 @@ const MyCart = () => {
     };
     const price = displayCraft?.map((it) => it?.price)
     const ratingDes = displayCraft?.map((it) => it?.rating)
-    console.log(price, ratingDes);
     //-------descending data
     const priceSort = price?.sort((a, b) => a - b);
     const ratingSort = ratingDes?.sort((a, b) => a - b);
@@ -75,24 +73,43 @@ const MyCart = () => {
     const handleSort = (filter) => {
         console.log('clicked');
         if (filter == priceSort) {
-            const remaining = displayCraft?.filter((book) => console.log(book?.price) == console.log(filter));
+            const remaining = items?.filter((book) => console.log(book?.price) == console.log(filter));
             const sort = remaining?.sort((rem1, rem2) => rem1?.price - rem2?.price)
             console.log(sort);
             setDisplayCraft(sort)
         }
         else if (filter == ratingSort) {
-            const remaining = displayCraft?.filter((book) => console.log(book.rating) == console.log(filter));
+            const remaining = items?.filter((book) => console.log(book.rating) == console.log(filter));
             const sort = remaining?.sort((rem1, rem2) => rem2.rating - rem1.rating)
             console.log(sort);
             setDisplayCraft(sort)
+        }
+        else if (filter == 'Yes') {
+            console.log('yes');
+            console.log(filter);
+            const remaining = items?.filter((book) => book.customization === 'Yes');
+            setDisplayCraft(remaining)
+            console.log(remaining);
+        }
+        else if (filter == 'No') {
+            console.log('no');
+            const remaining = items?.filter((book) => book.customization == 'No');
+            setDisplayCraft(remaining)
+            console.log(remaining);
+        }
+        else if(filter == 'All') {
+            setDisplayCraft(items)
         }
     }
     return (
         <div>
             <div className="w-1/2 mx-auto text-center">
                 <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn m-1 bg-green-300 ">Filter <FaArrowDownLong /></div>
+                    <div tabIndex={0} role="button" className="btn m-1 text-white bg-[#f7cc56] ">Customization <FaArrowDownLong /></div>
                     <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a onClick={() => handleSort(`All`)}>All</a></li>
+                        <li><a onClick={() => handleSort(`Yes`)}>Yes</a></li>
+                        <li><a onClick={() => handleSort(`No`)}>No</a></li>
                         <li><a onClick={() => handleSort(`${priceSort}`)}>Price</a></li>
                         <li><a onClick={() => handleSort(`${ratingSort}`)}>Rating</a></li>
                     </ul>
@@ -113,6 +130,7 @@ const MyCart = () => {
                                         <p className="text-xl font-semibold flex items-center gap-2">Price: {item?.price}<FaDollarSign /></p>
                                         <p className="text-xl font-semibold flex items-center gap-2">Rating: {item?.rating} <FaStar className="text-gold-500" /></p>
                                     </div>
+                                    <p className="text-xl font-semibold">Customization : {item?.customization}</p>
                                     <p className="text-xl font-semibold my-3">Stock : {item?.stock}</p>
                                     <div className="card-actions flex justify-between">
                                         <Link onClick={() => handleEdit(item?._id)} className="btn btn-success" to={`/update/${item?._id}`}>Update</Link>
