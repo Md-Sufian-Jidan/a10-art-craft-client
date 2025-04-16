@@ -41,7 +41,7 @@ Whether you're into painting, crafting, or collecting — this site is your go-t
 
 ```bash
 # Clone the repo
-git clone https://github.com/Md-Sufian-Jidan/a10-art-craft-client
+git clone https://github.com/Md-Sufian-Jidan/a10-art-craft-client.git
 cd craft-house
 
 # Install dependencies
