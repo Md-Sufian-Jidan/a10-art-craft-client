@@ -1,18 +1,51 @@
-# Crafts House
+# 🎨 Craft House – Unleash Your Inner Artist
 
-Some Imortant Things About This Craft House Website
-1) This website is for painting lovers
-2) This website will Extract Your inner imagination
-3) Our Website will help you how to create a Painting
-4) And With Our Painting Treasures Will imagination will grow faster than you think
-5) In This Website You can Add Your Craft And Sell It/
-6) You also Can Buy Other Craft.
-7) You Can See Your Add Craft In Your My Crafts Route.And You Can Filter Out Which One is Expencive And You Can Filter With Rating
+Welcome to **Craft House**, a vibrant web platform built for art lovers and creative minds.  
+Whether you're into painting, crafting, or collecting — this site is your go-to hub to **create, showcase, buy, and sell** handmade crafts.
 
-Especial Features
+🌐 **Live Site**: [https://assignment-art-craft.surge.sh](https://assignment-art-craft.surge.sh)
 
-Implement 2 NPM Package with Explore :
-1) React Awesome reveal
-2) React Tooltip
+---
 
-# Live Site Link : https://assignment-art-craft.surge.sh
+## ✨ Features
+
+- 🖌️ Explore an inspiring collection of handmade crafts
+- 🛍️ Buy and sell creative artwork directly through the platform
+- 🧑‍🎨 Add your own crafts, set prices, and manage listings
+- 🔍 Filter crafts by **price** and **rating**
+- 👤 Personal dashboard to view your listed crafts (`My Crafts` route)
+- 🎯 Designed to spark creativity and connect art enthusiasts
+
+---
+
+## 🚀 Tech Stack
+
+- **React**
+- **Tailwind CSS**
+- **React Router DOM**
+- **Firebase Authentication**
+- **Surge Hosting**
+
+---
+
+## 📦 NPM Packages Used
+
+| Package             | Purpose                                      |
+|---------------------|----------------------------------------------|
+| `react-awesome-reveal` | For smooth and elegant animation effects   |
+| `react-tooltip`        | To add interactive tooltips for better UX |
+
+---
+
+## 🧰 How to Use (for Developers)
+
+```bash
+# Clone the repo
+git clone https://github.com/Md-Sufian-Jidan/a10-art-craft-client
+cd craft-house
+
+# Install dependencies
+npm install
+
+# Start the dev server
+npm run dev
